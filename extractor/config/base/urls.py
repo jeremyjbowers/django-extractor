@@ -4,7 +4,7 @@ admin.autodiscover()
 from feed.api import v1
 
 urlpatterns = patterns('',
-    url(r'^api/', include(v1.urls)),    
-    url(r'^grappelli/', include('grappelli.urls')),
-    url(r'^admin/', include(admin.site.urls)),
+    url(r'^extractor/api/', include(v1.urls)),    
+    url(r'^extractor/grappelli/', include('grappelli.urls')),
+    url(r'^extractor/admin/', include(admin.site.urls)),
 )
