@@ -9,3 +9,4 @@ ipython
 feedparser                  
 yolk                        
 git+https://github.com/callowayproject/django-supertagging.git#egg=django-supertagging
+django-grappelli
