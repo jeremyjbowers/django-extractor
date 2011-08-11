@@ -42,4 +42,5 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.admin',
     'apps.feed',
+    'chronograph',
 )
