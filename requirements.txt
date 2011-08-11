@@ -1,0 +1,11 @@
+Django==1.3
+psycopg2
+python-dateutil             
+django-tastypie             
+simplejson                  
+fabric                      
+django-storages             
+ipython                     
+feedparser                  
+yolk                        
+git+https://github.com/callowayproject/django-supertagging.git#egg=django-supertagging
