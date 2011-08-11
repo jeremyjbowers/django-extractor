@@ -1,0 +1,15 @@
+<pre><code>             __                         __                   
+            /\ \__                     /\ \__                
+   __  __  _\ \ ,_\  _ __   __      ___\ \ ,_\   ___   _ __  
+ /'__`\\ \/'\\ \ \/ /\`'__\'__`\   /'___\ \ \/  / __`\/\`'__\
+/\  __//>  </ \ \ \_\ \ \/\ \L\.\_/\ \__/\ \ \_/\ \L\ \ \ \/ 
+\ \____\\_/\_\ \ \__\\ \_\ \__/.\_\ \____\\ \__\ \____/\ \_\ 
+ \/____///\/_/  \/__/ \/_/\/__/\/_/\/____/ \/__/\/___/  \/_/</pre></code>    
+A django project for extracting text from RSS items and visualizing the results.
+
+h2. Features
+
+* RSS feed importer.
+* Pluggable entity extraction.
+* Full RESTful API.
+* Django's CRUD admin for site management.
