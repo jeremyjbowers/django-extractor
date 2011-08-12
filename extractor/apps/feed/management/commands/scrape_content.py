@@ -27,4 +27,17 @@ class Command(BaseCommand):
             except:
                 print "Turns out, this isn't a story."
         
+        for item in FeedItem.objects.filter(guid="true"):
+            response = urllib2.urlopen(item.xml_url)
+            html = response.read()
             
+            soup = BeautifulSoup(html)
+            try:
+                image = soup.findAll(re.compile('^ece:multimediagroup'))[:1][0]
+                image = image.findAll(re.compile('^ece:multimedia'))[0]['filename']
+                
+                item.lead_image_url = image
+                item.save()
+                print "Imaged %s" % item
+            except:
+                print "This one doesn't have an image."
