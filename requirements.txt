@@ -11,3 +11,4 @@ git+https://github.com/callowayproject/django-supertagging.git#egg=django-supert
 django-grappelli
 hg+http://bitbucket.org/wnielson/django-chronograph/#egg=django-cronograph
 python-dateutil==1.5
+BeautifulSoup

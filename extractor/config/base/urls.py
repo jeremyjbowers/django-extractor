@@ -1,5 +1,6 @@
 from django.conf.urls.defaults import patterns, include, url
 from django.contrib import admin
+from django.views.generic.simple import redirect_to
 admin.autodiscover()
 from feed.api import v1
 
@@ -9,4 +10,5 @@ urlpatterns = patterns('',
     url(r'^extractor/admin/chronograph/job/(?P<pk>\d+)/run/$',
         'chronograph.views.job_run', name="chronograph_job_run"),
     url(r'^extractor/admin/', include(admin.site.urls)),
+    url(r'^extractor/random/$', 'feed.views.random'),
 )

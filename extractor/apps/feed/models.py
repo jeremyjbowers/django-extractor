@@ -1,7 +1,7 @@
 from django.db import models
 from extractor.apps.models import ModelBase
-from django.template.defaultfilters import slugify
-import re
+from django.template.defaultfilters import slugify, urlencode
+import re, string
 
 class Entity(ModelBase):
     name                = models.CharField(max_length=255)
@@ -38,7 +38,7 @@ class FeedItem(ModelBase):
     content             = models.TextField()
     permalink           = models.CharField(max_length=255)
     publication_date    = models.DateTimeField()
-    guid                = models.CharField(max_length=255, blank=True, null=True)
+    guid                = models.CharField(max_length=255, blank=True, null=True, default="false")
     lead_image_url      = models.CharField(max_length=255, blank=True, null=True)
     entities            = models.ManyToManyField(Entity, blank=True, null=True)
     
@@ -49,6 +49,13 @@ class FeedItem(ModelBase):
         if self.slug == None or self.slug == '':
             self.slug = slugify(self.__unicode__()[:199])
         super(FeedItem, self).save(*args, **kwargs)
+    
+    @property
+    def trove_url(self):
+        if self.guid == "true":
+            return 'http://iddevasyncnews.wapolabs.com/entities/entityExtraction.json?content=%s' % string.strip(urlencode(self.content), "%90")[:2000]
+        else:
+            return None
     
     @property
     def json_url(self):
